@@ -1,18 +1,17 @@
-
 spring:
   application:
     name: socios
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
-    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+    url: jdbc:postgresql://dpg-d90510b7uimc739326p0-a.ohio-postgres.render.com/gym_db_6klh
+    username: oscar
+    password: HcF3pzAlCU0c7pGoZnzk1Im0d0fLnP7f
+    driver-class-name: org.postgresql.Driver
   jpa:
     ddl-auto: update
     show-sql: true
 
 server:
-  port: 8082
+  port: 8081  # <-- Nota: Asegúrate de que use el 8081 en Render si es Socios, para que no choque con tus otros servicios.
 
 # Habilitación técnica de OpenAPI y Swagger UI
 springdoc:
@@ -25,4 +24,4 @@ springdoc:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://localhost:8761/eureka/}
+      defaultZone: https://gym-eureka-server-1.onrender.com/eureka/
