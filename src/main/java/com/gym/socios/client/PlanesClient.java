@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 // El nombre "ms-planes" es el que le pondrás al otro servicio después
-@FeignClient(name = "planes", url = "localhost:8081") 
+@FeignClient(name = "planes", url = "${FEIGN_URL_PLANES:http://localhost:8081}")
 public interface PlanesClient {
 
     @GetMapping("/api/planes/buscar/{run}")
